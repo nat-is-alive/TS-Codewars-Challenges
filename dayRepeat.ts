@@ -37,3 +37,48 @@ console.log(
     new Date()
   )
 );
+
+function reverse(tempusTime: string): string {
+  const firstChar: number = tempusTime.split(tempusTime.charAt(0)).length - 1;
+  const lastChar: number =
+    tempusTime.split(tempusTime.charAt(tempusTime.length - 1)).length - 1;
+  const months: string[] = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
+
+  return (
+    tempusTime.substring(firstChar - 1, tempusTime.length - lastChar + 1) +
+    " " +
+    firstChar +
+    " " +
+    months[lastChar - 1]
+  );
+}
+
+console.log(
+  reverse(
+    dateMaker(
+      [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ],
+      new Date()
+    )
+  )
+);
